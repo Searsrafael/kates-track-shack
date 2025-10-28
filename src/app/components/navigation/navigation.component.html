@@ -1,15 +1,110 @@
 <nav class="main-nav">
   <div class="container">
     <ul class="nav-links" [class.open]="mobileMenuOpen">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
-      <li><a routerLink="/tapes" routerLinkActive="active" (click)="closeMobileMenu()">Tapes For Sale</a></li>
-      <li><a routerLink="/players" routerLinkActive="active" (click)="closeMobileMenu()">Players For Sale</a></li>
-      <li><a routerLink="/repair-services" routerLinkActive="active" (click)="closeMobileMenu()">Player Repair</a></li>
-      <li><a routerLink="/transfer-services" routerLinkActive="active" (click)="closeMobileMenu()">Transfer Services</a></li>
-      <li><a routerLink="/accessories" routerLinkActive="active" (click)="closeMobileMenu()">Accessories</a></li>
-      <li><a routerLink="/garage-sale" routerLinkActive="active" (click)="closeMobileMenu()">Garage Sale</a></li>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMobileMenu()"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/tapes-for-sale"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Tapes For Sale</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/players-for-sale"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Players For Sale</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/repair-supplies"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Repair Supplies</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/services"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/accessories"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Accessories</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/garage-sale"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Garage Sale</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/gift-certificates"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Gift Certificates</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/media"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Media</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/ordering-and-shipping"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Ordering & Shipping</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/other-cool-pages"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Other Cool Pages</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/links"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          >Links</a
+        >
+      </li>
     </ul>
-    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.open]="mobileMenuOpen">
+
+    <button
+      class="mobile-menu-toggle"
+      (click)="toggleMobileMenu()"
+      [class.open]="mobileMenuOpen"
+    >
       <span></span>
       <span></span>
       <span></span>

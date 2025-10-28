@@ -1,45 +1,35 @@
 .site-header {
-  background: 
-    linear-gradient(145deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--primary-dark) 100%),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 10px,
-      rgba(255, 255, 255, 0.05) 10px,
-      rgba(255, 255, 255, 0.05) 20px
-    );
-  color: var(--white);
-  border: 4px outset var(--primary-color);
-  border-bottom: 4px solid var(--secondary-dark);
-  box-shadow: 
-    0 4px 8px rgba(139, 69, 19, 0.4),
-    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  background: white;
+  color: black;
+  border: 1px outset var(--primary-color);
+  border-bottom: 1px solid var(--secondary-dark);
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0;
   }
 
   .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
+    line-height: 1;
+    min-height: 0;
   }
 
   .logo-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
+    position: relative;
+    height: 150px ;
 
     .logo {
-      width: 80px;
-      height: 80px;
+      display: block;
+      width: 200px;        // Large per customer request
+      height: 200px;       // Large per customer request
       object-fit: contain;
-      flex-shrink: 0;
+      margin: -5px 0;
+      padding: 0;
     }
 
     .title-section {
@@ -48,46 +38,56 @@
     }
 
     .site-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       font-family: var(--display-font);
       margin: 0;
-      text-shadow: 
-        3px 3px 0px var(--secondary-dark),
-        4px 4px 8px rgba(0, 0, 0, 0.5);
-      color: var(--accent-color);
-      // Retro 3D text effect
-      background: linear-gradient(145deg, var(--accent-color), var(--retro-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--primary-color);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1.2;
     }
 
     .tagline {
-      font-size: 0.9rem;
-      margin: 0.5rem 0 0 0;
-      opacity: 0.95;
+      font-size: 0.85rem;
+      margin: 0.25rem 0 0 0;
       font-style: italic;
       font-family: var(--retro-font);
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      color: var(--retro-cream);
+      font-weight: bold;
+      color: black;
+      line-height: 1.3;
     }
   }
 
-  .contact-info {
-    text-align: right;
+  .contact-left {
+    text-align: left;
+    flex: 1;
     
     p {
-      margin: 0.25rem 0;
-      font-size: 0.9rem;
+      margin: 0;
+      font-size: 0.8rem;
+      color: black;
+      line-height: 1.2;
+    }
+  }
+
+  .contact-right {
+    text-align: right;
+    flex: 1;
+    
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: black;
+      line-height: 1.2;
     }
 
     a {
-      color: white;
+      color: blue;
       text-decoration: none;
 
       &:hover {
         text-decoration: underline;
+        color: var(--primary-color);
       }
     }
   }
@@ -95,8 +95,8 @@
   .header-notice {
     background: var(--retro-cream);
     color: var(--text-dark);
-    padding: 0.75rem 2rem;
-    margin-top: 1rem;
+    padding: 0.3rem 1.5rem;
+    margin-top: 0.25rem;
     border: 3px outset var(--retro-beige);
     text-align: center;
     position: relative;
@@ -105,11 +105,16 @@
     // Pumpkin decorations
     &:before,
     &:after {
-      content: '🎃 🎃 🎃';
+      content: '';
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1rem;
+      width: 4rem;
+      height: 1.5rem;
+      background-image: url('/assets/images/pumpkin.jpg');
+      background-repeat: repeat-x;
+      background-size: 1.5rem 1.5rem;
+      background-position: center;
     }
     
     &:before {
@@ -122,7 +127,7 @@
     
     p {
       margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-family: var(--retro-font);
       font-weight: bold;
       text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
