@@ -2,9 +2,14 @@
   <div class="container">
     <div class="header-content">
       <div class="logo-section">
-        <img src="/assets/images/kates-gremlin-logo.png" alt="Kate's Track Shack Logo" class="logo">
-        <h1 class="site-title">Kate's Track Shack</h1>
-        <p class="tagline">Your One Stop Internet Home For Inexpensive 8-Tracks and Much More!</p>
+        <img src="/assets/images/kates-gremlin-logo.png" 
+             alt="Kate's Track Shack Logo" 
+             class="logo"
+             (error)="onImageError($event)">
+        <div class="title-section">
+          <h1 class="site-title">Kate's Track Shack</h1>
+          <p class="tagline">Your One Stop Internet Home For Inexpensive 8-Tracks and Much More!</p>
+        </div>
       </div>
       <div class="contact-info">
         <p>📞 817-789-6881 (9am-5pm, Mon-Fri CST)</p>

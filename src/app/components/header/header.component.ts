@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  onImageError(event: any) {
+    // Hide the image if it fails to load
+    event.target.style.display = 'none';
+  }
 }

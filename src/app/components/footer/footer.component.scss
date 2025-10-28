@@ -1,8 +1,41 @@
 .site-footer {
-  background: #2c3e50;
-  color: white;
+  background: 
+    linear-gradient(180deg, 
+      var(--secondary-color) 0%,
+      var(--secondary-dark) 50%,
+      var(--secondary-color) 100%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.1) 4px,
+      rgba(0, 0, 0, 0.1) 8px
+    );
+  color: var(--retro-cream);
   padding: 3rem 0 1rem;
   margin-top: auto;
+  border-top: 4px solid var(--secondary-light);
+  position: relative;
+  
+  // Wood grain texture
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.05) 2px,
+        rgba(0, 0, 0, 0.05) 4px
+      );
+    pointer-events: none;
+  }
 
   .container {
     max-width: 1200px;

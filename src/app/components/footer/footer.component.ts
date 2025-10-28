@@ -9,5 +9,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
+  onImageError(event: any) {
+    // Hide the image if it fails to load
+    event.target.style.display = 'none';
+  }
 }

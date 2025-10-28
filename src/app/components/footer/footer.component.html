@@ -48,7 +48,10 @@
         <p>Serving Our Valued Customers On The Internet Since 1998</p>
       </div>
       <div class="gremlin-logo">
-        <img src="/assets/images/kates-gremlin-logo-sm.png" alt="Kate's Track Shack Gremlin Logo" class="footer-logo">
+        <img src="/assets/images/kates-gremlin-logo.png" 
+             alt="Kate's Track Shack Gremlin Logo" 
+             class="footer-logo"
+             (error)="onImageError($event)">
       </div>
     </div>
   </div>

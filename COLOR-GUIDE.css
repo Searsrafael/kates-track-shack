@@ -1,0 +1,46 @@
+/* 
+ * COLOR CUSTOMIZATION GUIDE for Kate's Track Shack
+ * 
+ * TO UPDATE COLORS TO MATCH YOUR LOGO:
+ * 1. Open your logo image in any image editor or online color picker
+ * 2. Use the eyedropper tool to get hex codes from your logo
+ * 3. Replace the values below in src/styles.scss
+ * 
+ * CURRENT COLOR SCHEME:
+ */
+
+:root {
+  /* === PRIMARY COLORS (Main brand colors from your logo) === */
+  --primary-color: #ff6b35;          /* 🎨 CHANGE: Main logo color */
+  --primary-dark: #e55a2b;           /* 🎨 CHANGE: Darker shade (for hover effects) */
+  --primary-light: #ff8355;          /* 🎨 CHANGE: Lighter shade (for accents) */
+  
+  /* === SECONDARY COLORS (Supporting colors from your logo) === */
+  --secondary-color: #2c3e50;        /* 🎨 CHANGE: Secondary logo color */
+  --secondary-dark: #34495e;         /* 🎨 CHANGE: Darker secondary */
+  --secondary-light: #546e7a;        /* 🎨 CHANGE: Lighter secondary */
+  
+  /* === ACCENT COLOR (Highlight color from your logo) === */
+  --accent-color: #f7931e;           /* 🎨 CHANGE: Accent/golden color */
+}
+
+/* 
+ * QUICK COLOR SUGGESTIONS based on common logo color schemes:
+ * 
+ * Option 1 - Classic 8-Track (Orange/Brown):
+ * --primary-color: #d2691e;      (chocolate orange)
+ * --secondary-color: #8b4513;    (saddle brown)
+ * --accent-color: #ff8c00;       (dark orange)
+ * 
+ * Option 2 - Retro Vinyl (Purple/Gold):
+ * --primary-color: #663399;      (deep purple)
+ * --secondary-color: #4a4a4a;    (dark gray)
+ * --accent-color: #ffd700;       (gold)
+ * 
+ * Option 3 - Gremlin Green:
+ * --primary-color: #228b22;      (forest green)
+ * --secondary-color: #2f4f4f;    (dark slate gray)
+ * --accent-color: #32cd32;       (lime green)
+ * 
+ * TO APPLY: Copy the values above and paste them in src/styles.scss
+ */
