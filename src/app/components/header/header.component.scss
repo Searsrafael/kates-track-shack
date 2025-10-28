@@ -1,0 +1,96 @@
+.site-header {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0 0;
+      opacity: 0.9;
+      font-style: italic;
+    }
+  }
+
+  .contact-info {
+    text-align: right;
+    
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .header-notice {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contact-info {
+      text-align: center;
+    }
+
+    .logo-section {
+      flex-direction: column;
+      
+      .site-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}

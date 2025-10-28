@@ -1,0 +1,53 @@
+<div class="tapes-page">
+  <div class="container">
+    <header class="page-header">
+      <h1>🎵 Tapes For Sale</h1>
+      <p>Browse our extensive collection of 8-track tapes. All tapes are tested to play but may need tune-ups (new pads/splices) for $2 extra per tape.</p>
+    </header>
+
+    <div class="filter-section">
+      <div class="search-controls">
+        <input type="text" placeholder="Search by artist, album, or genre..." class="search-input">
+        <select class="genre-filter">
+          <option value="">All Genres</option>
+          <option value="rock">Rock</option>
+          <option value="country">Country</option>
+          <option value="jazz">Jazz</option>
+          <option value="classical">Classical</option>
+          <option value="pop">Pop</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let tape of sampleTapes">
+        <div class="product-image">
+          <img [src]="tape.image" [alt]="tape.title">
+        </div>
+        <div class="product-info">
+          <h3>{{tape.title}}</h3>
+          <p class="artist">{{tape.artist}}</p>
+          <p class="genre">{{tape.genre}}</p>
+          <p class="condition">Condition: {{tape.condition}}</p>
+          <div class="price-section">
+            <span class="price">${{tape.price}}</span>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="card">
+        <h3>Important Information</h3>
+        <ul>
+          <li>All tapes are tested to ensure they play properly</li>
+          <li>Tapes can be tuned-up (new pads/splices) for an additional $2 per tape</li>
+          <li>Shipping available worldwide (restrictions may apply to players)</li>
+          <li>Media Mail shipping available in the US for tape-only orders</li>
+          <li>Contact us for special orders or hard-to-find titles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+.main-nav {
+  background: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0;
+
+    li {
+      flex: 1;
+
+      a {
+        display: block;
+        padding: 1rem 1.5rem;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+        font-weight: 500;
+        white-space: nowrap;
+
+        &:hover {
+          background: #34495e;
+          border-bottom-color: #ff6b35;
+        }
+
+        &.active {
+          background: #34495e;
+          border-bottom-color: #ff6b35;
+        }
+      }
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover span {
+      background: #ff6b35;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #2c3e50;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      &.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      li {
+        border-bottom: 1px solid #34495e;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          padding: 1rem;
+          border-bottom: none;
+
+          &.active {
+            background: #34495e;
+            border-left: 4px solid #ff6b35;
+          }
+        }
+      }
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .container {
+      padding: 1rem;
+    }
+  }
+}

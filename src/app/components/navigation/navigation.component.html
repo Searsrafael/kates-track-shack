@@ -1,0 +1,18 @@
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-links" [class.open]="mobileMenuOpen">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
+      <li><a routerLink="/tapes" routerLinkActive="active" (click)="closeMobileMenu()">Tapes For Sale</a></li>
+      <li><a routerLink="/players" routerLinkActive="active" (click)="closeMobileMenu()">Players For Sale</a></li>
+      <li><a routerLink="/repair-services" routerLinkActive="active" (click)="closeMobileMenu()">Player Repair</a></li>
+      <li><a routerLink="/transfer-services" routerLinkActive="active" (click)="closeMobileMenu()">Transfer Services</a></li>
+      <li><a routerLink="/accessories" routerLinkActive="active" (click)="closeMobileMenu()">Accessories</a></li>
+      <li><a routerLink="/garage-sale" routerLinkActive="active" (click)="closeMobileMenu()">Garage Sale</a></li>
+    </ul>
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.open]="mobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
