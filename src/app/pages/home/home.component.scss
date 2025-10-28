@@ -1,4 +1,25 @@
 .home-page {
+  // Pumpkin icon styles - switch between emoji and image
+  .pumpkin-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    
+    // Option 1: Use your custom image
+    &.custom-image {
+      background-image: url('/assets/images/pumpkin.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    // Option 2: Keep emoji (default)
+    &.emoji::before {
+      content: '🎃';
+    }
+  }
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -19,6 +40,29 @@
     text-align: center;
     border: 4px outset var(--retro-beige);
     position: relative;
+
+    .hero-image-container {
+      float: left;
+      margin: 0 2rem 1rem 0;
+      max-width: 300px;
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 3px outset var(--retro-beige);
+      box-shadow: 4px 4px 8px rgba(139, 69, 19, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-image-caption {
+      color: black;
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+      text-align: center;
+    }
     
     // Decorative corner brackets
     &:before,
@@ -44,18 +88,36 @@
       border-top: none;
     }
 
+    // Clear floats to contain the image
+    .container {
+      overflow: hidden; // Creates a block formatting context
+    }
+
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-family: var(--display-font);
+      font-weight: bold;
+      text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.4);
+      line-height: 1.2;
+    }
+
     h2 {
       color: var(--text-dark);
       margin-bottom: 1rem;
-      font-size: 2rem;
+      font-size: 1.25rem;
       font-family: var(--display-font);
       text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
     }
 
     .pumpkin-divider {
-      font-size: 1.2rem;
+      height: 3rem;
       margin: 1rem 0;
-      color: var(--primary-color);
+      background-image: url('/assets/images/pumpkin.jpg');
+      background-repeat: repeat-x;
+      background-size: 3rem 3rem;
+      background-position: center;
       animation: bounce 2s ease-in-out infinite;
     }
 
@@ -65,7 +127,7 @@
       gap: 2rem;
       margin-top: 2rem;
 
-      .featured-info, .new-releases {
+      .featured-info, .new-releases, .seasonal-sales {
         background: var(--retro-cream);
         padding: 2rem;
         border: 3px outset var(--retro-beige);
@@ -98,6 +160,66 @@
         p {
           font-family: var(--retro-font);
           color: var(--text-dark);
+        }
+      }
+    }
+
+    // Quick links within hero section
+    .hero-quick-links {
+      margin-top: 3rem;
+      
+      .link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .quick-link-card {
+        background: var(--retro-cream);
+        padding: 1.5rem;
+        border: 2px outset var(--retro-beige);
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 
+          3px 3px 6px rgba(139, 69, 19, 0.2),
+          inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        
+        // Retro border effect
+        &:before {
+          content: '';
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          right: -1px;
+          bottom: -1px;
+          border: 1px solid var(--accent-color);
+          z-index: -1;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+          border-style: inset;
+          box-shadow: 
+            2px 2px 4px rgba(139, 69, 19, 0.3),
+            inset 2px 2px 4px rgba(139, 69, 19, 0.1);
+        }
+
+        h3 {
+          color: var(--primary-color);
+          margin-bottom: 0.8rem;
+          font-size: 1.1rem;
+          font-family: var(--display-font);
+          font-weight: bold;
+          text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+        }
+
+        p {
+          color: var(--text-dark);
+          margin: 0;
+          font-size: 0.9rem;
+          line-height: 1.4;
         }
       }
     }
@@ -218,7 +340,7 @@
 
   @keyframes retro-glow {
     0%, 100% { text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3); }
-    50% { text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.6); }
+    50% { text-shadow: 2px 2px 8px rgba(139, 69, 19, 0.6); }
   }
 
   // Apply glow animation to headings
@@ -226,17 +348,418 @@
     animation: retro-glow 3s ease-in-out infinite;
   }
 
+  // New sections styles
+  .new-releases {
+    background: linear-gradient(135deg, #ffe4b5 0%, #f5deb3 100%);
+    padding: 3rem 0;
+    border: 3px outset var(--retro-beige);
+
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      font-family: var(--display-font);
+      font-size: 2.2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .releases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .release-card {
+      background: var(--retro-cream);
+      padding: 2rem;
+      border: 2px inset var(--retro-beige);
+      box-shadow: 4px 4px 8px rgba(139, 69, 19, 0.2);
+
+      h4 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-family: var(--display-font);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 0.8rem;
+          padding-left: 1.5rem;
+          position: relative;
+
+          &:before {
+            content: '🎵';
+            position: absolute;
+            left: 0;
+          }
+
+          a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+              text-decoration: underline;
+              color: #8B0000;
+            }
+          }
+        }
+      }
+    }
+
+    .release-note {
+      text-align: center;
+      font-style: italic;
+      margin-top: 2rem;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+  }
+
+  .seasonal-sales-section {
+    background: linear-gradient(135deg, #ff6347 0%, #ff8c69 50%, #ffa07a 100%);
+    padding: 3rem 0;
+    border: 3px ridge #cd853f;
+
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+      font-family: var(--display-font);
+      font-size: 2.5rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .seasonal-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .seasonal-sales {
+      background: var(--retro-cream);
+      padding: 2.5rem;
+      border: 3px outset var(--retro-beige);
+      border-radius: 4px;
+      box-shadow: 
+        6px 6px 12px rgba(139, 69, 19, 0.4),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+      position: relative;
+      transform: rotate(-1deg);
+      
+      &:nth-child(2) {
+        transform: rotate(1deg);
+      }
+
+      // Retro corner decorations
+      &:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border: 2px solid var(--accent-color);
+        border-radius: 6px;
+        z-index: -1;
+      }
+
+      &:hover {
+        transform: rotate(0deg) scale(1.02);
+        transition: all 0.3s ease;
+      }
+
+      h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.2rem;
+        font-family: var(--display-font);
+        font-size: 1.4rem;
+        text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        text-align: center;
+      }
+
+      h4 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        font-family: var(--display-font);
+        font-weight: bold;
+      }
+
+      p {
+        font-family: var(--retro-font);
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+
+        a {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+            color: #8B0000;
+          }
+        }
+      }
+    }
+  }
+
+  .important-notices {
+    background: #f0f8ff;
+    padding: 3rem 0;
+    border: 3px groove #4682b4;
+
+    .notice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .notice-card {
+      background: white;
+      padding: 2rem;
+      border: 2px outset #87ceeb;
+      box-shadow: 3px 3px 6px rgba(70, 130, 180, 0.3);
+
+      h3 {
+        color: #4682b4;
+        margin-bottom: 1rem;
+        font-family: var(--display-font);
+        font-weight: bold;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+
+        strong {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .tape-info {
+    background: var(--retro-cream);
+    padding: 3rem 0;
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 2rem;
+      border: 2px inset var(--retro-beige);
+      box-shadow: 2px 2px 6px rgba(139, 69, 19, 0.2);
+
+      h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-family: var(--display-font);
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+
+        strong {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+
+  .garage-sale-promo {
+    background: linear-gradient(135deg, var(--retro-cream) 0%, #d2b48c 100%);
+    padding: 3rem 0;
+    border: 3px ridge var(--retro-brown);
+
+    .garage-sale-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--retro-cream);
+      padding: 3rem;
+      border: 3px outset var(--retro-beige);
+      box-shadow: 6px 6px 12px rgba(139, 69, 19, 0.3);
+      text-align: center;
+
+      h2 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-family: var(--display-font);
+        font-size: 2.5rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        text-align: left;
+
+        strong {
+          color: var(--accent-color);
+        }
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: var(--accent-color);
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border: 3px outset var(--accent-color);
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #8B0000;
+          border-color: #8B0000;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .social-connect {
+    background: #f5f5dc;
+    padding: 3rem 0;
+    border: 3px double #cd853f;
+
+    .social-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--retro-cream);
+      padding: 2.5rem;
+      border: 2px groove var(--retro-beige);
+      text-align: center;
+
+      h3 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-family: var(--display-font);
+        font-size: 2rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+
+        strong {
+          color: var(--accent-color);
+        }
+
+        em {
+          font-style: italic;
+          color: #8B4513;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .pumpkin-divider {
+    height: 30px;
+    background-image: url('/assets/images/pumpkin.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: center;
+    margin: 2rem 0;
+    border: 1px solid #cd853f;
+    opacity: 0.8;
+  }
+
+  .new-badge {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px outset #ff6b35;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin-right: 0.5rem;
+    animation: bounce 2s infinite;
+  }
+
   @media (max-width: 768px) {
     .hero-section .hero-content {
       grid-template-columns: 1fr;
+    }
+
+    .hero-section .hero-quick-links .link-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .quick-links .link-grid {
       grid-template-columns: 1fr;
     }
 
-    .hero-section h2 {
+    .hero-section h1 {
       font-size: 1.5rem;
+    }
+
+    .hero-section h2 {
+      font-size: 1.2rem;
+    }
+
+    .hero-section .hero-image-container {
+      float: none;
+      margin: 0 auto 2rem;
+      max-width: 250px;
+    }
+
+    .hero-section .hero-quick-links {
+      margin-top: 2rem;
+
+      .quick-link-card {
+        padding: 1.2rem;
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .releases-grid,
+    .notice-grid,
+    .info-grid,
+    .seasonal-content {
+      grid-template-columns: 1fr;
+    }
+
+    .new-releases h2,
+    .seasonal-sales-section h2,
+    .garage-sale-promo h2 {
+      font-size: 1.8rem;
+    }
+
+    .seasonal-sales-section .seasonal-sales {
+      transform: none !important;
+      padding: 2rem;
+
+      &:hover {
+        transform: none !important;
+      }
+    }
+
+    .garage-sale-card {
+      padding: 2rem;
     }
   }
 }

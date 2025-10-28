@@ -9,11 +9,11 @@ import { TransferServicesComponent } from './pages/transfer-services/transfer-se
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'tapes', component: TapesComponent },
-  { path: 'players', component: PlayersComponent },
+  { path: 'tapes-for-sale', component: TapesComponent },
+  { path: 'players-for-sale', component: PlayersComponent },
+  { path: 'repair-supplies', component: RepairServicesComponent },
+  { path: 'services', component: TransferServicesComponent },
   { path: 'accessories', component: AccessoriesComponent },
-  { path: 'repair-services', component: RepairServicesComponent },
-  { path: 'transfer-services', component: TransferServicesComponent },
   { path: 'garage-sale', component: GarageSaleComponent },
   { path: '**', redirectTo: '' }
 ];
