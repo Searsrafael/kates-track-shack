@@ -1,5 +1,7 @@
 /* Global styles for Kate's Track Shack - Retro Edition */
 
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 :root {
   // Retro 8-Track Color Scheme
   --primary-color: #d2691e;          // Chocolate orange (classic 8-track)
@@ -289,5 +291,70 @@ a {
       transparent 5px,
       transparent 10px
     );
+  }
+}
+
+/* Material Dropdown Retro Theme */
+.mat-mdc-menu-panel.retro-dropdown,
+.mat-mdc-menu-panel {
+  background: var(--retro-cream) !important;
+  border: 3px outset var(--retro-beige) !important;
+  box-shadow: 
+    4px 4px 8px rgba(139, 69, 19, 0.3),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 4px !important;
+  margin-top: 4px !important;
+  z-index: 9999 !important;
+
+  .mat-mdc-menu-item {
+    background: transparent !important;
+    color: var(--text-dark) !important;
+    font-family: var(--display-font) !important;
+    font-weight: bold !important;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1) !important;
+    padding: 0.75rem 1rem !important;
+    min-height: auto !important;
+    line-height: 1.2 !important;
+    
+    &:hover {
+      background: rgba(139, 69, 19, 0.1) !important;
+      border: 2px inset var(--retro-beige) !important;
+      margin: 0 2px !important;
+      color: var(--primary-color) !important;
+    }
+
+    &:focus {
+      background: rgba(139, 69, 19, 0.15) !important;
+      outline: 2px solid var(--accent-color) !important;
+      outline-offset: -2px !important;
+    }
+
+    .mat-mdc-menu-item-text,
+    .mdc-list-item__primary-text {
+      font-family: var(--display-font) !important;
+      font-weight: bold !important;
+      color: inherit !important;
+    }
+
+    span {
+      font-family: var(--display-font) !important;
+      font-weight: bold !important;
+    }
+  }
+
+  .mat-mdc-menu-item:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* Override Material Design button defaults in navigation */
+.main-nav {
+  .mat-mdc-button,
+  .mat-button {
+    --mdc-text-button-container-shape: 0 !important;
+    --mdc-text-button-label-text-font: var(--display-font) !important;
+    --mdc-text-button-label-text-weight: bold !important;
+    --mat-text-button-state-layer-color: transparent !important;
+    --mat-text-button-ripple-color: transparent !important;
   }
 }
