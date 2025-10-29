@@ -6,6 +6,7 @@ import { AccessoriesComponent } from './pages/accessories/accessories.component'
 import { RepairServicesComponent } from './pages/repair-services/repair-services.component';
 import { GarageSaleComponent } from './pages/garage-sale/garage-sale.component';
 import { TransferServicesComponent } from './pages/transfer-services/transfer-services.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'services', component: TransferServicesComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'garage-sale', component: GarageSaleComponent },
+  { path: 'privacy', component: PrivacyComponent },
   { path: '**', redirectTo: '' }
 ];

@@ -1,55 +1,122 @@
 <nav class="main-nav">
   <div class="container">
     <ul class="nav-links" [class.open]="mobileMenuOpen">
-      <li>
-        <a
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="closeMobileMenu()"
-          >Home</a
-        >
+      <!-- Home dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="homeMenu"
+          class="nav-dropdown-trigger">
+          Home
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #homeMenu="matMenu">
+          <a mat-menu-item routerLink="/" (click)="closeMobileMenu()">
+            <span>Home Page</span>
+          </a>
+          <a mat-menu-item routerLink="/privacy" (click)="closeMobileMenu()">
+            <span>Privacy Policy</span>
+          </a>
+        </mat-menu>
       </li>
-      <li>
-        <a
-          routerLink="/tapes-for-sale"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Tapes For Sale</a
-        >
+      
+      <!-- Tapes dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="tapesMenu"
+          class="nav-dropdown-trigger">
+          Tapes
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #tapesMenu="matMenu">
+          <a mat-menu-item routerLink="/tapes-for-sale" (click)="closeMobileMenu()">
+            <span>Tapes For Sale</span>
+          </a>
+          <a mat-menu-item routerLink="/new-releases" (click)="closeMobileMenu()">
+            <span>New Releases</span>
+          </a>
+          <a mat-menu-item routerLink="/grab-bags" (click)="closeMobileMenu()">
+            <span>Grab Bags</span>
+          </a>
+        </mat-menu>
       </li>
-      <li>
-        <a
-          routerLink="/players-for-sale"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Players For Sale</a
-        >
+
+      <!-- Players dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="playersMenu"
+          class="nav-dropdown-trigger">
+          Players
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #playersMenu="matMenu">
+          <a mat-menu-item routerLink="/players-for-sale" (click)="closeMobileMenu()">
+            <span>All Players</span>
+          </a>
+          <a mat-menu-item routerLink="/portable-players" (click)="closeMobileMenu()">
+            <span>Portable Players</span>
+          </a>
+          <a mat-menu-item routerLink="/car-players" (click)="closeMobileMenu()">
+            <span>Car Players</span>
+          </a>
+          <a mat-menu-item routerLink="/home-players" (click)="closeMobileMenu()">
+            <span>Home Players</span>
+          </a>
+        </mat-menu>
       </li>
-      <li>
-        <a
-          routerLink="/repair-supplies"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Repair Supplies</a
-        >
+
+      <!-- Services dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="servicesMenu"
+          class="nav-dropdown-trigger">
+          Services
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #servicesMenu="matMenu">
+          <a mat-menu-item routerLink="/services" (click)="closeMobileMenu()">
+            <span>All Services</span>
+          </a>
+          <a mat-menu-item routerLink="/player-repair" (click)="closeMobileMenu()">
+            <span>Player Repair</span>
+          </a>
+          <a mat-menu-item routerLink="/tape-repair" (click)="closeMobileMenu()">
+            <span>Tape Repair</span>
+          </a>
+          <a mat-menu-item routerLink="/transfer-services" (click)="closeMobileMenu()">
+            <span>Transfer Services</span>
+          </a>
+        </mat-menu>
       </li>
-      <li>
-        <a
-          routerLink="/services"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Services</a
-        >
+
+      <!-- Supplies & Accessories dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="suppliesMenu"
+          class="nav-dropdown-trigger">
+          Supplies
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #suppliesMenu="matMenu">
+          <a mat-menu-item routerLink="/repair-supplies" (click)="closeMobileMenu()">
+            <span>Repair Supplies</span>
+          </a>
+          <a mat-menu-item routerLink="/accessories" (click)="closeMobileMenu()">
+            <span>Accessories</span>
+          </a>
+          <a mat-menu-item routerLink="/splicing-blocks" (click)="closeMobileMenu()">
+            <span>Splicing Blocks</span>
+          </a>
+          <a mat-menu-item routerLink="/adapters" (click)="closeMobileMenu()">
+            <span>Adapters</span>
+          </a>
+        </mat-menu>
       </li>
-      <li>
-        <a
-          routerLink="/accessories"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Accessories</a
-        >
-      </li>
+
       <li>
         <a
           routerLink="/garage-sale"
@@ -66,37 +133,30 @@
           >Gift Certificates</a
         >
       </li>
-      <li>
-        <a
-          routerLink="/media"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Media</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/ordering-and-shipping"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Ordering & Shipping</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/other-cool-pages"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Other Cool Pages</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/links"
-          routerLinkActive="active"
-          (click)="closeMobileMenu()"
-          >Links</a
-        >
+
+      <!-- More dropdown -->
+      <li class="dropdown-item">
+        <button 
+          mat-button 
+          [matMenuTriggerFor]="moreMenu"
+          class="nav-dropdown-trigger">
+          More
+          <span class="dropdown-arrow">▼</span>
+        </button>
+        <mat-menu #moreMenu="matMenu">
+          <a mat-menu-item routerLink="/media" (click)="closeMobileMenu()">
+            <span>Media</span>
+          </a>
+          <a mat-menu-item routerLink="/ordering-and-shipping" (click)="closeMobileMenu()">
+            <span>Ordering & Shipping</span>
+          </a>
+          <a mat-menu-item routerLink="/other-cool-pages" (click)="closeMobileMenu()">
+            <span>Other Cool Pages</span>
+          </a>
+          <a mat-menu-item routerLink="/links" (click)="closeMobileMenu()">
+            <span>Links</span>
+          </a>
+        </mat-menu>
       </li>
     </ul>
 
